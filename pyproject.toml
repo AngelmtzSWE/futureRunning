@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "futurerunning"
+version = "1.0.0"
+description = "A reliable, data-driven running journal"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+futurerunning = "futurerunning.cli:run_cli"
+futurerunning-gui = "futurerunning.gui:launch_gui"
+
+[tool.setuptools.packages.find]
+where = ["src"]
