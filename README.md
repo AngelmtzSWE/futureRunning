@@ -52,5 +52,4 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 The code is deliberately dependency-free. `src/futurerunning/` separates domain models, persistence, analytics, and CLI presentation so each part can evolve independently.
-# futureRunning
-trying to make a positive impact on people through running 
+

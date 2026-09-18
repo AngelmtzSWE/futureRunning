@@ -15,3 +15,6 @@ futurerunning-gui = "futurerunning.gui:launch_gui"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+futurerunning = ["static/*.html", "static/*.css", "static/*.js"]

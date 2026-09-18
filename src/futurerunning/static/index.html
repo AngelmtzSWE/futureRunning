@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>futureRunning</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="shell">
+  <header>
+    <div><h1 id="title">Your running journal</h1><p class="sub">A clear view of your effort, one run at a time.</p></div>
+    <nav class="nav">
+      <button data-view="log" class="active">Log a run</button><button data-view="overview">Overview</button><button data-view="history">History</button><button data-view="goals">Goals</button>
+    </nav>
+  </header>
+  <section id="log" class="view active"><div class="log-layout">
+    <div class="panel log-hero"><div class="hint">TODAY'S MOMENT</div><h2>Log your run.</h2><p class="hint">Tell us three simple things. We will do the math.</p>
+      <form id="run" class="form">
+        <label>How far did you go? <span class="hint">miles</span><input id="distance" type="number" min="0.01" step="0.01" placeholder="Example: 3.1" required></label>
+        <div><label>How long did it take?</label><div class="time-row"><label>Hours<input id="hours" type="number" min="0" max="99" value="0"></label><label>Minutes<input id="minutes" type="number" min="0" max="59" value="0"></label><label>Seconds<input id="seconds" type="number" min="0" max="59" value="0"></label></div></div>
+        <label>When did you run?<input id="runDate" type="date" required></label>
+        <label>Anything you want to remember? <span class="hint">optional</span><input id="notes" placeholder="Example: Felt strong"></label>
+        <button>Add my run</button><div class="status" id="status"></div>
+      </form>
+    </div>
+    <div class="panel"><h2>Your rhythm</h2><div class="quick"><div class="row"><span>Runs logged</span><strong id="logRuns">0</strong></div><div class="row"><span>Total distance</span><strong id="logMiles">0.0 mi</strong></div><div class="row"><span>Average pace</span><strong id="logPace">--</strong></div><div class="row"><span>Current streak</span><strong id="logStreak">0 days</strong></div></div><p class="hint callout">Your data stays local in this project. No account or upload required.</p></div>
+  </div></section>
+  <section id="overview" class="view"><div class="grid metrics"><div class="metric"><strong id="runs">0</strong><span>Runs logged</span></div><div class="metric"><strong id="miles">0.0 mi</strong><span>Total distance</span></div><div class="metric"><strong id="pace">--</strong><span>Average pace</span></div><div class="metric"><strong id="longest">0.0 mi</strong><span>Longest run</span></div><div class="metric"><strong id="streak">0 days</strong><span>Current streak</span></div></div><div class="panel"><h2>Training snapshot</h2><p class="sub">Your consistency, measured in the metrics that matter.</p><div id="overviewGoal" class="status"></div></div></section>
+  <section id="history" class="view"><div class="panel"><h2>Run history</h2><p class="sub">Every run you have logged, in one place.</p><div id="table" class="table-wrap"></div></div></section>
+  <section id="goals" class="view"><div class="goal-layout"><div class="panel"><h2>Personalize your journal</h2><form id="profile" class="form"><label>Your name<input id="name" placeholder="e.g. Alex"></label><button class="secondary">Save name</button></form><p class="hint callout">This journal belongs to you. Your name is saved locally with your running data.</p></div><div class="panel"><h2>Set a mileage goal</h2><form id="goal" class="form"><label>Target miles<input id="target" type="number" min="0.1" step="0.1" placeholder="40"></label><label>Start date<input id="start" type="date"></label><label>End date<input id="end" type="date"></label><button>Save goal</button></form><div class="goal-card"><strong id="goalStatus">No goal set yet.</strong><div class="progress"><i id="progressBar"></i></div><span class="hint">Build a goal around your own season, not someone else's.</span></div></div></div></section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
